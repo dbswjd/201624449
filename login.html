@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		function join(){
+			var iden = $(':input[name=identity]:radio:checked').val();
+			if (iden == "m"){
+				location.href="register_man.html";
+			}else{
+				location.href="register_stud.html";
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+<form method="post" action="login.php">
+	<div align="center" style="margin-top:30%">
+		<div class="form-group" style="width:90%">
+			<input type="text" class="form-control" id="id" name="id" placeholder="ID" required>
+			<span class="help-block"><p id="id-check" class="help-block hidden"></p></span>
+		</div>
+		<div class="form-group" style="width:90%">
+			<input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+			<span class="help-block"><p id="password-check" class="help-block hidden"></p></span>
+		</div>
+	</div>
+	
+	<div align="center" class="button">
+		<button type="submit" class="btn btn-primary" style="width:90%">LogIn</button>
+		<span><p></p></span>
+		<button onclick="join()" class="btn btn-primary" style="width:90%">회원가입</button>
+	</div>
+	
+	<br><br><br><br><br><br>
+	<div align="right" style="margin-right:5%">
+		<input type="radio" name="identity" value="s" checked>학생<br>
+		<input type="radio" name="identity" value="m">담당자<br>
+	</div>
+
+</form>
+<br><br><br><br><br>
+
+</body>
+
+</html>
